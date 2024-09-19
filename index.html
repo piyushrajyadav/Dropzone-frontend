@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropzone File Upload</title>
+    <!-- Include Dropzone CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+      }
+      .dropzone {
+        border: 2px dashed #0087F7;
+        padding: 30px;
+        background-color: #f9f9f9;
+      }
+    </style>
+</head>
+<body>
+
+<h1>Please upload your file </h1>
+
+<!-- Dropzone Form -->
+<form action="/upload" class="dropzone" id="myDropzone">
+  <div class="dz-message">
+    Drag and drop files here or click to upload.
+  </div>
+</form>
+
+<!-- Include Dropzone JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
+
+<script>
+  Dropzone.options.myDropzone = {
+    maxFilesize: 5, // 5MB limit
+    acceptedFiles: ".png,.jpg,.jpeg,.gif,.pdf", // Accepted file types
+    init: function() {
+      this.on("success", function(file, response) {
+        alert("File uploaded successfully!");
+      });
+    }
+  };
+</script>
+<style>
+ .dropzone {
+  border: 2px dashed rgba(255, 255, 255, 0.4); /* Light translucent border */
+  border-radius: 15px; /* Smooth rounded corners */
+  padding: 50px; /* Spacious padding */
+  text-align: center; /* Center-align content */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  color: #fff; /* White text */
+  background: linear-gradient(135deg, #2b2b36, #1e1e28); /* Dark futuristic gradient background */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.4s ease; /* Smooth transition */
+  width: 400px; /* Wider area */
+  margin: 30px auto; /* Center horizontally */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2), 0 0 30px rgba(0, 255, 255, 0.3); /* Futuristic neon-like glow */
+}
+
+.dropzone:hover {
+  border-color: rgba(0, 255, 255, 0.8); /* Neon blue border on hover */
+  background: linear-gradient(135deg, #1f1f2e, #191924); /* Slight change in gradient for interaction */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.6); /* Intensify the glow */
+}
+
+.dropzone .dz-message {
+  font-size: 0.9em; /* Smaller font size */
+  color: rgba(255, 255, 255, 0.7); /* Subtle white text */
+  letter-spacing: 2px; /* Modern, spaced-out letters */
+  text-transform: uppercase; /* All caps for a sleek look */
+}
+
+.dropzone .dz-message span {
+  font-size: 1.2em; /* Slightly larger span */
+  color: rgba(0, 255, 255, 0.9); /* Neon blue text for span */
+  font-weight: 600; /* Bolder span text */
+}
+
+.dropzone .dz-icon {
+  font-size: 3em; /* Icon size */
+  color: rgba(0, 255, 255, 0.8); /* Neon blue icon */
+  margin-bottom: 15px; /* Space below the icon */
+}
+
+.dropzone.dragover {
+  border-color: rgba(0, 255, 255, 1); /* Bright neon blue border when dragging */
+  background: linear-gradient(135deg, #222232, #181822); /* Darken gradient while dragging */
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8), 0 0 50px rgba(0, 255, 255, 1); /* Brighter glow on dragover */
+}
+
+  </style>
+  
+</body>
+</html>
